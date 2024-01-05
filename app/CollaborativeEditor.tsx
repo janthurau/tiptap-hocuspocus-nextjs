@@ -19,13 +19,13 @@ export default function CollaborativeEditorComponent(props: { documentName: stri
   useEffect(() => {
     if (typeof window !== undefined) {
       providerSocket.current = new TiptapCollabProviderWebsocket({
-       appId: 'XY9DJ9E6',
+       appId: 'YOUR_APP_ID',
       })
 
       provider.current = new TiptapCollabProvider({
         websocketProvider: providerSocket.current,
         name: props.documentName,
-        token: 'YOUR_TEST',
+        token: 'YOUR_JWT',
         onStatus(data) {
           setStatus(data.status)
         }
